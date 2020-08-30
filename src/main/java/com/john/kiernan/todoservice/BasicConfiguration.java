@@ -30,7 +30,7 @@ public class BasicConfiguration extends WebSecurityConfigurerAdapter {
                 .withUser("admin").password(passwordEncoder.encode("adminPass")).roles("ADMIN");
     }
 
-    //Talk about hiding what framework is being used
+
     @Override
     protected void configure(final HttpSecurity http) throws Exception {
         http
@@ -48,7 +48,6 @@ public class BasicConfiguration extends WebSecurityConfigurerAdapter {
                 .defaultSuccessUrl("/list-todos.html", true)
                 .failureHandler(authenticationFailureHandler())
                 .and()
-                // https://www.baeldung.com/spring-security-logout
                 .logout()
                 .logoutUrl("/perform_logout")
                 .invalidateHttpSession(true)
@@ -58,7 +57,7 @@ public class BasicConfiguration extends WebSecurityConfigurerAdapter {
 
     @Bean
     public AuthenticationFailureHandler authenticationFailureHandler() {
-        // https://www.baeldung.com/spring-security-custom-authentication-failure-handler
+
         return new CustomAuthenticationFailureHandler();
     }
 

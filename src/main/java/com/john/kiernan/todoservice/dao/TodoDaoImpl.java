@@ -17,7 +17,7 @@ public class TodoDaoImpl implements TodoDao {
    private final String DELETE_TODO_BY_ID = "DELETE FROM TODOS WHERE ID = :ID";
    private final String UPDATE_TODO_BY_ID = "UPDATE TODOS SET DESC = :DESC, LASTUPDATED =:LASTUPDATED, DONE = :DONE WHERE ID = :ID";
 
-    //https://www.baeldung.com/spring-boot-h2-database
+
     @Autowired
     private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
 
